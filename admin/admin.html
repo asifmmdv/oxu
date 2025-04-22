@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/input.css">
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(33,33,33);
+            font-family: "Merriweather", serif;;
+        }
+    </style>
+</head>
+<body>
+    <div class="w-full px-[56px] flex flex-col">
+        <div class="flex mt-15 justify-between">
+            <h1 class="font-bold text-[48px]  text-white text-center">XƏBƏRLƏR</h1>
+            <div class="loader">
+                <div class="container">
+                  <div class="carousel">
+                    <div class="love"></div>
+                    <div class="love"></div>
+                    <div class="love"></div>
+                    <div class="love"></div>
+                    <div class="love"></div>
+                    <div class="love"></div>
+                    <div class="love"></div>
+                  </div> 
+                </div>
+                <div class="container">
+                  <div class="carousel">
+                    <div class="death"></div>
+                    <div class="death"></div>
+                    <div class="death"></div>
+                    <div class="death"></div>
+                    <div class="death"></div>
+                    <div class="death"></div>
+                    <div class="death"></div>
+                  </div> 
+                </div>
+                <div class="container">
+                  <div class="carousel">
+                      <div class="robots"></div>
+                      <div class="robots"></div>
+                      <div class="robots"></div>
+                      <div class="robots"></div>
+                      <div class="robots"></div>
+                      <div class="robots"></div>
+                      <div class="robots"></div>
+                  </div> 
+                </div>
+              </div>              
+        <button id="btn1" onclick="openModal()" class="w-[240px] ">Xəbər yerləşdir</button>
+        </div>
+        <div class="flex flex-col mt-[24px]">
+            <table class="text-[20px] border-separate border-spacing-7 min-w-[1000px]">
+                <thead>
+                    <tr class="shadow-lg shadow-[#23c483] rounded-lg text-white h-[60px]">
+                        <td class="px-2 w-[20%]">Şəkil</td>
+                        <td class="w-[20%]">Başlıq</td>
+                        <td class="w-[25%]">Mətn</td>
+                        <td class="w-[10%]">Tarix</td>
+                        <td class="w-[10%]">Baxışlar</td>
+                        <td class="w-[5%] text-center">Sil</td>
+                        <td class="w-[10%]">Düzəliş et</td>
+                    </tr>
+                </thead>
+                <tbody id="table">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="modal" onclick="openModal()" class="inset-0 fixed w-full h-full flex hidden justify-center items-center bg-[#a09898ae]">
+        <div onclick="event.stopPropagation()" class="w-[400px] h-[500px] p-4 bg-white rounded-[30px] flex gap-[24px] flex-col">
+            <input  type="text" placeholder="Başlıq" class="border-[1px] h-[30px] rounded-lg px-2 border-black">
+            <textarea  class="h-[200px] border-[1px] px-2 rounded-lg border-black" placeholder="Mətn"></textarea>
+            <input  type="text" placeholder="Şəkil əlavə et" class="border-[1px] h-[30px] rounded-lg px-2 border-black">
+            <input type="number" class="border-[1px] rounded-lg px-2 h-[30px] border-black" placeholder="Baxış sayı">
+            <button  class="mt-[24px] text-[20px] bg-[green] rounded-[24px] text-[white]"> Yerləşdir</button>
+        </div>
+    </div>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

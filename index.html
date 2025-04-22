@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/input.css">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="fixed top-0 left-0 right-0 z-[1000]">
+        <div class="px-[56px] h-[32px] items-center gap-[8px] flex text-white bg-[#051D39]">
+            <i class="fa-solid fa-bolt text-[20px]"></i>
+            <div id="flowingDiv" class="w-[100%] overflow-hidden">
+                <ul id="content" class="flex text-nowrap gap-[8px] list-disc">
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    I've been fuckin' hoes and poppin' pillies
+                    </li>
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    Man, I feel just like a rockstar (Star, ayy, ayy)
+                    </li>
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    All my brothers got that gas
+                    </li>
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    And they always be smokin' like a Rasta ('Sta)
+                    </li>
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    Fuckin' with me, call up on a Uzi
+                    </li>
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    And show up, man, them the shottas ('Tas)
+                    </li>
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    When my homies pull up on your block
+                    </li>
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    They make that thing go grra-ta-ta-ta (Ta, pow, pow, pow, ayy, ayy)
+                    </li>
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    Switch my whip, came back in black
+                    </li>
+                    <li class="flex items-center gap-[4px]">
+                    <i class="fa-solid fa-circle text-[4px]"></i>
+                    I'm startin' sayin', "Rest in peace to Bon Scott" (Scott, ayy)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="h-[66px] px-[66px] w-[100%] flex justify-between items-center">
+            <div id="navContent" class="flex justify-between w-full items-center">
+                <img  src="./images/logo.svg" class="cursor-pointer" alt="lg">
+                <div  class="flex items-center gap-[20px] justify-between">
+                    <div class="flex gap-1 text-white rounded-[30px] cursor-pointer text-[12px] items-center font-bold py-[4px] px-[10px] bg-[rgb(226,69,78)]">
+                        <img src="./images/signal-stream.svg" class="w-[24px] h-[24px] brightness-0 invert-[100%]" alt="sgl">
+                        <span>LIVE</span>
+                    </div>
+                    <div class="rounded-[30px] cursor-pointer text-[14px] px-[12px] font-[500] py-[3px] border-[1px] border-[#cac8c8]">
+                        <span>İlham Əliyev</span>
+                    </div>
+                    <div class="rounded-[30px] cursor-pointer text-[14px] px-[12px] font-[500] py-[3px] border-[1px] border-[#cac8c8]">
+                        <span>Şəhid dəfni</span>
+                    </div>
+                    <div class="rounded-[30px] cursor-pointer text-[14px] px-[12px] font-[500] py-[3px] border-[1px] border-[#cac8c8]">
+                        <span>ABŞ-Çin iqtisadi müharibəsi</span>
+                    </div>
+                    <div class="rounded-[30px] cursor-pointer text-[14px] px-[12px] font-[500] py-[3px] border-[1px] border-[#cac8c8]">
+                        <span>Hava proqnozu</span>
+                    </div>
+                    <div class="rounded-[30px] cursor-pointer text-[14px] px-[12px] font-[500] py-[3px] border-[1px] border-[#cac8c8]">
+                        <span>Neokolonializmlə mübarizə</span>
+                    </div>
+                </div>
+                <i onclick="openSearch()" class="fa-solid cursor-pointer fa-magnifying-glass text-[22px] text-[rgb(70,70,70)]"></i>
+            </div>
+            <div id="searchInp" class="hidden flex items-center w-[100%] relative">
+                <input type="search" placeholder="Axtarış" class="w-[100%] h-[40px] border-[1px] outline-none py-[6px] px-[12px] text-[#212529] text-[16px] italic rounded-[20px] border-[rgb(69,146,158)]">
+                <i class="fa-solid absolute cursor-pointer fa-magnifying-glass text-[22px] text-[rgb(70,70,70)] right-[40px]"></i>
+                <i onclick="openSearch()" class="fa-solid cursor-pointer fa-xmark text-[22px] text-[rgb(70,70,70)] absolute right-[8px]"></i>
+            </div>
+            <i onclick="openDd()" class="fa-solid fa-bars text-[22px] ml-[36px] cursor-pointer text-[rgb(70,70,70)]"></i>
+        </div>
+        <div id="dropdown" class="bg-[rgba(250,250,249,0.88)] max-h-0 overflow-hidden">
+            <div class="pt-8 px-[66px] gap-[48px] flex flex-col max-w-[1000px] m-auto pb-18">
+                <div class="flex flex-row gap-[30px]">
+                    <div class="flex flex-col gap-[36px]">
+                        <div class="rounded-[30px] cursor-pointer flex items-cente justify-center text-nowrap font-bold text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Ana səhifə</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer flex items-center justify-center text-nowrap font-bold text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Kriminal</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer flex items-center justify-center text-nowrap font-bold text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Turizm</span>
+                        </div>      
+                    </div>
+                    <div class="flex flex-col gap-[36px]">
+                        <div class="rounded-[30px] cursor-pointer text-nowrap flex items-cente justify-center font-bold text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Siyasət</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap flex items-cente justify-center font-bold text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>İdman</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap flex items-cente justify-center font-bold text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>İKT</span>
+                        </div>      
+                    </div>
+                    <div class="flex flex-col gap-[36px]">
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>İqtisadiyyat</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Mədəniyyət</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Baku TV</span>
+                        </div>      
+                    </div>
+                    <div class="flex flex-col gap-[36px]">
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Cəmiyyət</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Dünya</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>CineMastercard</span>
+                        </div>      
+                    </div>
+                    <div class="flex flex-col gap-[36px]">
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Ordu</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Hadisə</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Digər</span>
+                        </div>      
+                    </div>
+                    <div class="flex flex-col gap-[36px]">
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Şou-biznes</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Müsahibə</span>
+                        </div>
+                        <div class="rounded-[30px] cursor-pointer text-nowrap font-bold flex items-cente justify-center text-[#051D39] text-[16px] px-[16px] py-[5px] border-[1px] border-[#cac8c8]">
+                            <span>Maraqlı</span>
+                        </div>      
+                    </div>
+                </div>
+                <div class="flex text-[16px] text-[grey] justify-between">
+                    <div class="flex flex-col">
+                        <span class="text-[#191C1C] font-bold">Karyera</span>
+                        <span class="underline">cv@oxu.az</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[#191C1C] text-right font-bold">Ümumi sorğular üçün</span>
+                        <div class="flex gap-[8px]">
+                            <span class="underline">
+                                editor@oxu.az,
+                            </span>
+                            <span class="underline">
+                                055 224 76 86,
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="aside" class="w-[56px] fixed top-8 gap-[84px] left-0 flex flex-col h-full z-[1000] py-5 bg-[rgba(250,250,249,0.88)] px-[10px] pb-[52px]">
+        <div class="flex flex-col items-center justify-between gap-[32px]">
+                <span class="text-[12px] cursor-pointer w-[36px] text-white h-[24px] flex items-center  justify-center font-bold bg-[#051D39] rounded-[44px]"><span>AZ</span></span></span>
+                <span class="text-[12px] cursor-pointer w-[36px] bg-white h-[24px] flex items-center border-[2px] border-[#051D39] justify-center font-bold text-[#051D39] rounded-[44px]"><span>RU</span></span></span>
+                <span class="text-[12px] cursor-pointer w-[36px] bg-white h-[24px] flex items-center border-[2px] border-[#051D39] justify-center font-bold text-[#051D39] rounded-[44px]"><span>TR</span></span></span>
+                <i class="fa-solid cursor-pointer fa-circle-info text-[24px] text-[#051D39]"></i>
+                <i class="fa-solid cursor-pointer fa-bullhorn text-[24px] text-[#051D39]"></i>
+                <i class="fa-regular cursor-pointer fa-moon text-[24px] text-[#051D39]"></i>
+        </div>
+        <div class="flex flex-col items-center justify-between gap-[32px]">
+            <img class="cursor-pointer" src="./images/facebook.svg" alt="fb">
+            <img class="cursor-pointer" src="./images/x.svg" alt="x">
+            <img class="cursor-pointer" src="./images/telegram.svg" alt="tg">
+            <img class="cursor-pointer" src="./images/wp.svg" alt="wp">
+            <img class="cursor-pointer" src="./images/instagram.svg" alt="inst">
+            <img class="cursor-pointer" src="./images/apple.svg" alt="apple">
+            <img class="cursor-pointer" src="./images/play-store.svg" alt="pm">
+        </div>
+    </div>
+
+    <script src="./js/header.js"></script>
+</body>
+</html>
