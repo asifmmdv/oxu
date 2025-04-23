@@ -77,7 +77,7 @@ function addNews(){
         },
         body: JSON.stringify({
             title: inpTitle.value,
-            desc: inpDesc.value,
+            description: inpDesc.value,
             img: inpImg.value,
             view: inpView.value,
             date: inpDate.value
@@ -128,7 +128,7 @@ function editFetchNews(id){
         },
         body: JSON.stringify({
             title: inpTitle.value,
-            desc: inpDesc.value,
+            description: inpDesc.value,
             img: inpImg.value,
             view: inpView.value,
             date: inpDate.value
