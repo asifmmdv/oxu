@@ -31,7 +31,7 @@ function showAllNews(){
                 <td class="w-[10%]">${item.date}</td>
                 <td class="w-[5%] text-center">${item.view}</td>
                 <td class="w-[5%]  text-center">
-                    <button id="btn2">
+                    <button id="btn2" onclick="deleteNews(${item.id})">
                         <svg viewBox="0 0 15 17.5" height="24" width="20" xmlns="http://www.w3.org/2000/svg" class="icon">
                             <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
                         </svg>
@@ -53,10 +53,22 @@ function deleteNews(id){
      })
      .then(res => res.json())
      .then(mel => {
-         data.length = 0
-         data.push(...mel)
-         showAllNews()
+            const newData = data.filter(item => item.id != id)
+            data.length = 0
+            data.push(...newData)
+            showAllNews()
      })
 }
 
-
+function addNews(){
+    fetch(`https://67ee3f33c11d5ff4bf78e031.mockapi.io/data/${id}`, {
+        method:'POST'
+     })
+     .then(res => res.json())
+     .then(mel => {
+            const newData = data.filter(item => item.id != id)
+            data.length = 0
+            data.push(...newData)
+            showAllNews()
+     })
+}

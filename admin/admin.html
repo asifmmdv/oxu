@@ -80,11 +80,11 @@
     </div>
     <div id="modal" onclick="openModal()" class="inset-0 fixed w-full h-full flex hidden justify-center items-center bg-[#a09898ae]">
         <div onclick="event.stopPropagation()" class="w-[400px] h-[500px] p-4 bg-white rounded-[30px] flex gap-[24px] flex-col">
-            <input  type="text" placeholder="Başlıq" class="border-[1px] h-[30px] rounded-lg px-2 border-black">
-            <textarea  class="h-[200px] border-[1px] px-2 rounded-lg border-black" placeholder="Mətn"></textarea>
-            <input  type="text" placeholder="Şəkil əlavə et" class="border-[1px] h-[30px] rounded-lg px-2 border-black">
-            <input type="number" class="border-[1px] rounded-lg px-2 h-[30px] border-black" placeholder="Baxış sayı">
-            <button  class="mt-[24px] text-[20px] bg-[green] rounded-[24px] text-[white]"> Yerləşdir</button>
+            <input id="inpTitle"  type="text" placeholder="Başlıq" class="border-[1px] h-[30px] rounded-lg px-2 border-black">
+            <textarea  id="inpDesc" class="h-[200px] border-[1px] px-2 rounded-lg border-black" placeholder="Mətn"></textarea>
+            <input  id="inpImg" type="text" placeholder="Şəkil əlavə et" class="border-[1px] h-[30px] rounded-lg px-2 border-black">
+            <input id="inpView" type="number" class="border-[1px] rounded-lg px-2 h-[30px] border-black" placeholder="Baxış sayı">
+            <button onclick="addNews()" class="mt-[24px] text-[20px] bg-[green] rounded-[24px] text-[white]"> Yerləşdir</button>
         </div>
     </div>
     <script src="../js/admin.js"></script>
