@@ -25,3 +25,7 @@ function handleLogin(){
         }
       })
 }
+
+function logOut(){
+    location.href = "/index.html"
+}

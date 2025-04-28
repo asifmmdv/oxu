@@ -23,6 +23,8 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -242,6 +244,12 @@
   .mt-\[-8px\] {
     margin-top: -8px;
   }
+  .mt-\[-80px\] {
+    margin-top: -80px;
+  }
+  .mt-\[-100px\] {
+    margin-top: -100px;
+  }
   .mt-\[20px\] {
     margin-top: 20px;
   }
@@ -262,6 +270,9 @@
   }
   .ml-\[36px\] {
     margin-left: 36px;
+  }
+  .ml-auto {
+    margin-left: auto;
   }
   .block {
     display: block;
@@ -370,6 +381,9 @@
   }
   .w-\[100\%\] {
     width: 100%;
+  }
+  .w-\[150px\] {
+    width: 150px;
   }
   .w-\[240px\] {
     width: 240px;
@@ -482,12 +496,19 @@
   .rounded-\[44px\] {
     border-radius: 44px;
   }
+  .rounded-\[45px\] {
+    border-radius: 45px;
+  }
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
   .rounded-l-lg {
     border-top-left-radius: var(--radius-lg);
     border-bottom-left-radius: var(--radius-lg);
+  }
+  .border-4 {
+    border-style: var(--tw-border-style);
+    border-width: 4px;
   }
   .border-\[1px\] {
     border-style: var(--tw-border-style);
@@ -500,8 +521,14 @@
   .border-\[\#051D39\] {
     border-color: #051D39;
   }
+  .border-\[\#315cfd\] {
+    border-color: #315cfd;
+  }
   .border-\[\#cac8c8\] {
     border-color: #cac8c8;
+  }
+  .border-\[red\] {
+    border-color: red;
   }
   .border-\[rgb\(69\,146\,158\)\] {
     border-color: rgb(69,146,158);
@@ -551,6 +578,9 @@
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
+  .p-10 {
+    padding: calc(var(--spacing) * 10);
+  }
   .p-40 {
     padding: calc(var(--spacing) * 40);
   }
@@ -586,6 +616,9 @@
   }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
   }
   .py-30 {
     padding-block: calc(var(--spacing) * 30);
@@ -634,6 +667,9 @@
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
   }
+  .text-\[1\.2em\] {
+    font-size: 1.2em;
+  }
   .text-\[4px\] {
     font-size: 4px;
   }
@@ -662,6 +698,10 @@
     --tw-font-weight: 500;
     font-weight: 500;
   }
+  .font-\[550\] {
+    --tw-font-weight: 550;
+    font-weight: 550;
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -680,6 +720,9 @@
   }
   .text-\[grey\] {
     color: grey;
+  }
+  .text-\[red\] {
+    color: red;
   }
   .text-\[rgb\(70\,70\,70\)\] {
     color: rgb(70,70,70);
@@ -730,9 +773,39 @@
     --tw-invert: invert(100%);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
+  }
+  .hover\:bg-\[\#315cfd\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #315cfd;
+      }
+    }
+  }
+  .hover\:bg-\[red\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: red;
+      }
+    }
+  }
+  .hover\:text-\[1\.5em\] {
+    &:hover {
+      @media (hover: hover) {
+        font-size: 1.5em;
+      }
+    }
   }
   .hover\:text-blue-700 {
     &:hover {
@@ -745,6 +818,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-red-700);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }
@@ -1567,6 +1647,10 @@ input[type="search"]::-webkit-search-cancel-button {
   syntax: "*";
   inherits: false;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -1607,6 +1691,7 @@ input[type="search"]::-webkit-search-cancel-button {
       --tw-drop-shadow-color: initial;
       --tw-drop-shadow-alpha: 100%;
       --tw-drop-shadow-size: initial;
+      --tw-duration: initial;
     }
   }
 }
