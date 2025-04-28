@@ -26,6 +26,8 @@ function handleLogin(){
       })
 }
 
-function logOut(){
-    location.href = "/index.html"
+function logOut() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("status");
+    location.href = "/index.html";
 }

@@ -11,10 +11,12 @@ function verify(){
             "Authorization" : `Bearer ${token}`
         }
     }).then(res => res.json())
-      .then(data => console.log(data))
+      .then(info => console.log(info))
    }
 }
-verify()
+if (window.location.pathname.startsWith('/admin')) {
+    verify();
+}
 
 const data = []
 const modal = document.getElementById('modal')
