@@ -4,7 +4,7 @@ function showMainNews() {
     mainNews.innerHTML = '';
     data.forEach(item => {
         mainNews.innerHTML += `
-        <div class=" bg-white rounded-lg overflow-hidden shadow-lg mb-6">
+        <a href="/detail/details.html?id=${item.id}" class="block bg-white rounded-lg overflow-hidden shadow-lg mb-6">
             <img src="${item.img}" class="w-full h-48" alt="${item.title}">
             <div class="p-6">
                 <div class="flex justify-between items-start">
@@ -16,7 +16,7 @@ function showMainNews() {
                     <span class="text-sm text-gray-500">${item.date}</span>
                 </div>
             </div>
-        </div>
+        </a>
         `;
     });
     

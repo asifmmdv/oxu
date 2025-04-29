@@ -1,19 +1,3 @@
-function verify(){
-   const token = localStorage.getItem("token") 
-   const status = localStorage.getItem("status") 
-
-   if(!token || !status){
-    window.location.href="/auth/login.html"
-   }
-   else{
-    fetch ("https://neptunbk.vercel.app/auth/verify-token",{
-        headers:{
-            "Authorization" : `Bearer ${token}`
-        }
-    }).then(res => res.json())
-      .then(info => console.log(info))
-   }
-}
 if (window.location.pathname.startsWith('/admin')) {
     verify();
 }
@@ -109,29 +93,6 @@ function addNews(){
         openModal()
         clearInps()
        })
-}
-
-function validation(){
-    if (inpTitle.value.trim() == ""){
-        inpTitle.focus()
-        return true
-    }
-    if (inpDesc.value.trim() == ""){
-        inpDesc.focus()
-        return true
-    }
-    if (inpImg.value.trim() == ""){
-        inpImg.focus()
-        return true
-    }
-    if (inpView.value.trim() == ""){
-        inpView.focus()
-        return true
-    }
-    if (inpDate.value.trim() == ""){
-        inpDate.focus()
-        return true
-    }
 }
 
 function clearInps(){
