@@ -535,6 +535,9 @@
   .p-40 {
     padding: calc(var(--spacing) * 40);
   }
+  .p-50 {
+    padding: calc(var(--spacing) * 50);
+  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
