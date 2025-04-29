@@ -17,8 +17,7 @@ function openModal(){
 }
 
 function getAllNews(){
-    fetch("https://67ee3f33c11d5ff4bf78e031.mockapi.io/data")
-        .then(res => res.json())
+    useGetAllNews()
         .then(mel => {
             data.length = 0
             data.push(...mel.reverse())
@@ -58,10 +57,7 @@ function showAllNews(){
     })
 }
 function deleteNews(id){
-     fetch(`https://67ee3f33c11d5ff4bf78e031.mockapi.io/data/${id}`, {
-        method:'DELETE'
-     })
-     .then(res => res.json())
+    useDeleteNews(id)
      .then(mel => {
             const newData = data.filter(item => item.id != id)
             data.length = 0
@@ -74,20 +70,7 @@ function addNews(){
 
     if(validation()) return;
 
-    fetch(`https://67ee3f33c11d5ff4bf78e031.mockapi.io/data`, {
-        method:'POST',
-        headers: {
-            "Content-type":"application/json",
-        },
-        body: JSON.stringify({
-            title: inpTitle.value,
-            description: inpDesc.value,
-            img: inpImg.value,
-            view: inpView.value,
-            date: inpDate.value
-
-        })
-     }).then(res => res.json())
+    useAddNews(item)
        .then(mel => {
         getAllNews()
         openModal()
@@ -102,20 +85,7 @@ function clearInps(){
 
 function editFetchNews(id){
     if(validation()) return;
-    fetch(`https://67ee3f33c11d5ff4bf78e031.mockapi.io/data/${id}`, {
-        method:'PUT',
-        headers: {
-            "Content-type":"application/json",
-        },
-        body: JSON.stringify({
-            title: inpTitle.value,
-            description: inpDesc.value,
-            img: inpImg.value,
-            view: inpView.value,
-            date: inpDate.value
-
-        })
-     }).then(res => res.json())
+    useEditNews(id,item)
        .then(mel => {
         getAllNews()
         openModal()
